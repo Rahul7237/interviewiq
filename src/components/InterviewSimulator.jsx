@@ -880,7 +880,16 @@ export default function InterviewSimulator() {
                   </div>
                   <div style={{ flex:1, minWidth:'180px' }}>
                     <Label>Number of Questions</Label>
-                    <input className="ivinput" type="number" min="1" max="15" value={numQ} onChange={e=>setNumQ(+e.target.value||5)} required style={INP} />
+                    <div style={{ display:'flex', alignItems:'center', gap:'0', border:'1px solid rgba(139,92,246,0.25)', borderRadius:'12px', overflow:'hidden', background:'rgba(255,255,255,0.03)', height:'46px' }}>
+                      <button type="button" onClick={()=>setNumQ(q=>Math.max(1,q-1))} style={{ width:'46px', height:'100%', background:'transparent', border:'none', color:'#a78bfa', fontSize:'1.4rem', cursor:'pointer', flexShrink:0, display:'flex', alignItems:'center', justifyContent:'center', borderRight:'1px solid rgba(139,92,246,0.15)' }}>−</button>
+                      <div style={{ flex:1, textAlign:'center', color:'#f0f0ff', fontWeight:700, fontSize:'1.1rem', fontFamily:"'JetBrains Mono',monospace" }}>{numQ}</div>
+                      <button type="button" onClick={()=>setNumQ(q=>Math.min(15,q+1))} style={{ width:'46px', height:'100%', background:'transparent', border:'none', color:'#a78bfa', fontSize:'1.4rem', cursor:'pointer', flexShrink:0, display:'flex', alignItems:'center', justifyContent:'center', borderLeft:'1px solid rgba(139,92,246,0.15)' }}>+</button>
+                    </div>
+                    <div style={{ display:'flex', gap:'6px', marginTop:'8px', flexWrap:'wrap' }}>
+                      {[3,5,7,10].map(n=>(
+                        <button key={n} type="button" onClick={()=>setNumQ(n)} style={{ flex:1, padding:'4px 0', borderRadius:'8px', border:`1px solid ${numQ===n?'rgba(139,92,246,0.6)':'rgba(255,255,255,0.08)'}`, background:numQ===n?'rgba(139,92,246,0.2)':'transparent', color:numQ===n?'#c4b5fd':'#6b6b8a', fontSize:'0.75rem', fontWeight:700, cursor:'pointer' }}>{n}</button>
+                      ))}
+                    </div>
                   </div>
                 </div>
 

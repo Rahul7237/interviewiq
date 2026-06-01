@@ -1014,6 +1014,18 @@ export default function InterviewSimulator() {
         <div style={{ textAlign:'center', marginTop:'24px', fontSize:'0.68rem', color:'#1e1e38', letterSpacing:'0.04em' }}>
           Adaptive difficulty · Short Answer & MCQ · Personalised Scorecards · Gemini 2.5 Flash
         </div>
+
+        {/* ── Developer Footer ── */}
+        <div style={{ textAlign:'center', marginTop:'14px', display:'flex', alignItems:'center', justifyContent:'center', gap:'6px', flexWrap:'wrap' }}>
+          <span style={{ fontSize:'0.68rem', color:'#2a2a42' }}>Built by</span>
+          <a href="https://www.linkedin.com/in/rahul-kumar-56b700165/" target="_blank" rel="noopener noreferrer"
+            style={{ fontSize:'0.72rem', fontWeight:700, color:'#3a3a5a', textDecoration:'none', display:'flex', alignItems:'center', gap:'4px', transition:'color 0.2s' }}
+            onMouseEnter={e=>e.currentTarget.style.color='#a78bfa'}
+            onMouseLeave={e=>e.currentTarget.style.color='#3a3a5a'}>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            Rahul Roy
+          </a>
+        </div>
       </div>
     </div>
   );
